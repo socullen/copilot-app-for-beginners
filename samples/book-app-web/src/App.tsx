@@ -82,8 +82,8 @@ export default function App() {
           </div>
         ) : (
           <div className="empty-state" role="status">
-            <h2>No matching books found</h2>
-            <p>Try a different search term, genre, or reading status.</p>
+            <h2>No results</h2>
+            <p>Try again.</p>
           </div>
         )}
       </section>
