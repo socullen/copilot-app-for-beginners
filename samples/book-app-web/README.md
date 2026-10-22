@@ -30,3 +30,8 @@ The course still needs predictable issue and PR practice, so seeded scenario tex
 - `../app-course-pr-scenarios.md`
 
 Those files describe bugs learners can introduce or fix in a branch without making the default sample fail.
+
+## Training scenario note
+
+This branch is used for the Agent Merge readiness discussion in the course. It keeps the app behavior stable while giving learners a safe pull request to inspect.
+
