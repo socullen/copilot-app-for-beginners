@@ -7,7 +7,7 @@ type ReadingStatsProps = {
 
 export function getReadingStats(books: Book[]) {
   const readCount = books.filter((book) => book.isRead).length;
-  const favoriteCount = books.filter((book) => book.isFavorite).length;
+  const favoriteCount = books.filter((book) => book.isFavorite && book.isRead).length;
   const ratingTotal = books.reduce((total, book) => total + book.rating, 0);
 
   return {
