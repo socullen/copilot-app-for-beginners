@@ -30,3 +30,8 @@ The course still needs predictable issue and PR practice, so seeded scenario tex
 - `../app-course-pr-scenarios.md`
 
 Those files describe bugs learners can introduce or fix in a branch without making the default sample fail.
+
+## Visual polish practice
+
+Use this branch to practice planning responsive card improvements before changing UI code.
+
