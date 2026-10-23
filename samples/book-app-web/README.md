@@ -13,6 +13,10 @@ npm install
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
+Use the **Dark theme** toggle above the collection to switch themes. It supports
+keyboard activation and resets to light when you reload the page. Switching themes
+keeps your current search and filters.
+
 ## Validate changes
 
 ```bash

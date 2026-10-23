@@ -1,5 +1,5 @@
 import React from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BookCard } from "./components/BookCard";
 import { BookFilters } from "./components/BookFilters";
 import { ReadingStats } from "./components/ReadingStats";
@@ -39,12 +39,30 @@ export function filterBooks(bookList: Book[], filters: BookFiltersState) {
 }
 
 export default function App() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
   const [filters, setFilters] = useState<BookFiltersState>(defaultFilters);
   const genres = useMemo(() => [...new Set(books.map((book) => book.genre))].sort(), []);
   const filteredBooks = useMemo(() => filterBooks(books, filters), [filters]);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    return () => {
+      delete document.documentElement.dataset.theme;
+    };
+  }, [theme]);
+
   return (
     <main className="app-shell">
+      <div className="theme-toolbar">
+        <button
+          type="button"
+          className="theme-toggle"
+          aria-pressed={theme === "dark"}
+          onClick={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
+        >
+          Dark theme
+        </button>
+      </div>
       <section className="hero">
         <p className="eyebrow">GitHub Copilot app sample</p>
         <h1>Book Collection</h1>
